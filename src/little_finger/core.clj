@@ -15,7 +15,7 @@
    :body "The Little Finger is up"})
 
 (defn status-handler []
-  {:status 200
+  {:status (Integer. (env :response-status))
    :headers {"Content-Type" "application/json"}
    :body (get-json-response)})
 
