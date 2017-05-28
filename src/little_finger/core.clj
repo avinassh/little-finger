@@ -2,11 +2,12 @@
   (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
             [compojure.handler :refer [site]]
             [ring.adapter.jetty :as jetty]
-            [clojure.data.json :as json]))
+            [clojure.data.json :as json]
+            [environ.core :refer [env]]))
 
 (defn get-json-response []
-    (json/write-str {:NotificationTitle "Noti title"
-                     :NotificationText "Noti text"}))
+    (json/write-str {:NotificationTitle (env :notification-title)
+                     :NotificationText (env :notification-text)}))
 
 (defn index []
   {:status 200
