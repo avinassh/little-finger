@@ -1,7 +1,12 @@
 (ns little-finger.core
   (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
             [compojure.handler :refer [site]]
-            [ring.adapter.jetty :as jetty]))
+            [ring.adapter.jetty :as jetty]
+            [clojure.data.json :as json]))
+
+(defn get-json-response []
+    (json/write-str {:NotificationTitle "Noti title"
+                     :NotificationText "Noti text"}))
 
 (defn index []
   {:status 200
@@ -10,8 +15,8 @@
 
 (defn status-handler []
   {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body "Kill the app"})
+   :headers {"Content-Type" "application/json"}
+   :body (get-json-response)})
 
 (defroutes app
   (GET "/" []
