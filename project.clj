@@ -6,7 +6,8 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [ring/ring-core "1.6.1"]
                  [ring/ring-jetty-adapter "1.6.1"]
-                 [compojure "1.6.0"]]
+                 [compojure "1.6.0"]
+                 [org.clojure/data.json "0.2.6"]]
   :main ^:skip-aot little-finger.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
