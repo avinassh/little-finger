@@ -8,7 +8,7 @@
    :headers {"Content-Type" "text/plain"}
    :body "The Little Finger is up"})
 
-(defn statusHandler []
+(defn status-handler []
   {:status 200
    :headers {"Content-Type" "text/plain"}
    :body "Kill the app"})
@@ -17,7 +17,7 @@
   (GET "/" []
        (index))
   (GET "/status" []
-       (statusHandler)))
+       (status-handler)))
 
 (defn -main [& [port]]
   (let [port (Integer. 5000)]
