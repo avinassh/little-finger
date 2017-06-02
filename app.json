@@ -1,0 +1,20 @@
+{
+  "name": "little-finger",
+  "description": "Little Finger server",
+  "repository": "https://github.com/avinassh/little-finger",
+  "keywords": ["clojure", "little-finger"],
+  "env": {
+    "RESPONSE_STATUS": {
+      "description": "The HTTP response status you want from server. Read Little Finger's documentation for more details",
+      "required": true
+    },
+    "NOTIFICATION_TITLE": {
+      "description": "Push notification title",
+      "required": false
+    },
+    "NOTIFICATION_TEXT": {
+      "description": "Push notification text/body",
+      "required": false
+    }
+  }
+}
