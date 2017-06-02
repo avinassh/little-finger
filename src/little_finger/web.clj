@@ -23,7 +23,9 @@
   (GET "/" []
        (index))
   (GET "/status" []
-       (status-handler)))
+       (status-handler))
+  (ANY "*" []
+       {:status 404}))
 
 (defn -main [& [port]]
   (let [port (Integer. (or port (env :port) 5000))]
