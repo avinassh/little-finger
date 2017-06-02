@@ -26,5 +26,5 @@
        (status-handler)))
 
 (defn -main [& [port]]
-  (let [port (Integer. 5000)]
+  (let [port (Integer. (or port (env :port) 5000))]
     (jetty/run-jetty (site #'app) {:port port :join? false})))
