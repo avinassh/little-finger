@@ -9,5 +9,6 @@
                  [compojure "1.6.0"]
                  [org.clojure/data.json "0.2.6"]
                  [environ "1.1.0"]]
+  :min-lein-version "2.0.0"
   :uberjar-name "little-finger-standalone.jar"
   :profiles {:production {:env {:production true}}})
