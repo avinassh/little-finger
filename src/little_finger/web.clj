@@ -1,4 +1,4 @@
-(ns little-finger.core
+(ns little-finger.web
   (:require [compojure.core :refer [defroutes GET PUT POST DELETE ANY]]
             [compojure.handler :refer [site]]
             [ring.adapter.jetty :as jetty]
