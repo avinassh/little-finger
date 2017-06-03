@@ -34,7 +34,7 @@ conflict. When Little Finger receives 409, it crashes the app. The server also c
     LittleFinger.start(this, "https://your-heroku-app.heroku.com");
     ```
 
-3. If you have received the payment or if there is n conflict, then update the Heroku App's environment variable (usually located at - https://dashboard.heroku.com/apps/your-heroku-app/settings, `Config Variables`) accordingly.
+3. If you have received the payment or if there is a conflict, then update the Heroku App's environment variable (usually located at - https://dashboard.heroku.com/apps/your-heroku-app/settings, `Config Variables`) accordingly.
 
 
 ## Detailed instructions
