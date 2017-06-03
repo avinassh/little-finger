@@ -19,19 +19,27 @@ Following HTTP status codes are used:
 - If the server sends `HTTP_CONFLICT` (409), then no payment has been received and there is a
 conflict. When Little Finger receives 409, it crashes the app. The server also can notification data and Little Finger uses that to display a local notification before crashing. You can be creative and send a notification text saying "You have won $10 million dollars" or other such spammy messages to make the matter worse.
 
+## Default behaviours
+
+1. If there is no internet available and if app fails to make a HTTP call, then app crashes
+2. If server sends any other responses, other than 202 or 409, app continues to work as expected
+3. If your heroku app is down and app fails to reach then app will continue to work as expected, as heroku sends 404
+
+Little Finger is fully open source, so you are free to fork, modify these behaviours as per your taste.
+
 ## Quick instructions
 
 1. Install the server on Heroku (click on Deploy on Heroku button at the bottom). Give the response status code as `402` or `200`.
 2. Include Little Finger calling code in your app. If [iOS](https://github.com/avinassh/little-finger-ios):
         
     ```swift
-    LittleFinger.start("https://your-heroku-app.heroku.com");
+    LittleFinger.start("https://your-heroku-app.heroku.com/status/");
     ```
 
     if [Android](https://github.com/avinassh/little-finger-android):
     
     ```java
-    LittleFinger.start(this, "https://your-heroku-app.heroku.com");
+    LittleFinger.start(this, "https://your-heroku-app.heroku.com/status/");
     ```
 
 3. If you have received the payment or if there is a conflict, then update the Heroku App's environment variable (usually located at - https://dashboard.heroku.com/apps/your-heroku-app/settings, `Config Variables`) accordingly.
@@ -42,6 +50,10 @@ conflict. When Little Finger receives 409, it crashes the app. The server also c
 1. The [Little Finger server](https://github.com/avinassh/little-finger) is written in Clojure and comes with one click Heroku deploy (located at bottom). Click on it and it will do the server installation.
 2. For Swift, check the [swift repo's README](https://github.com/avinassh/little-finger-ios) for detailed installation instructions.
 3. For Android, check the [android repo's README](https://github.com/avinassh/little-finger-android) for detailed installation instructions.
+
+## Demo
+
+Very simple and crude demo apps: [iOS](https://github.com/avinassh/LFDemo-iOS) and [Android](https://github.com/avinassh/LFDemo-Android)
 
 ## Heroku 
 
