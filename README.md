@@ -22,13 +22,13 @@ conflict. When Little Finger receives 409, it crashes the app. The server also c
 ## Quick instructions
 
 1. Install the server on Heroku (click on Deploy on Heroku button at the bottom). Give the response status code as `402` or `200`.
-2. Include Little Finger calling code in your app. If iOS:
+2. Include Little Finger calling code in your app. If [iOS](https://github.com/avinassh/little-finger-ios):
         
     ```swift
     LittleFinger.start("https://your-heroku-app.heroku.com");
     ```
 
-    if Android:
+    if [Android](https://github.com/avinassh/little-finger-android):
     
     ```java
     LittleFinger.start(this, "https://your-heroku-app.heroku.com");
@@ -53,4 +53,4 @@ The name Little Finger comes from GRRM's A Song of Ice and Fire character [Petyr
 
 ## License
 
-The mighty MIT license. Please check `LICENSE` for more details.
+The libraries and server are released under the mighty [MIT license](https://v.mit-license.org/). Please check the `LICENSE` file of respective repository for more details.
